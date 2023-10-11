@@ -1,32 +1,40 @@
-import json
-dct = { #key = model, value is merk
-    "Mx5":["Mazda","Nissan","Citroen"],
-    "Veyron":"Bugatti",
-    "Agera":"Koenigsegg",
-    "M5CS":"BMW",
-    "A8":"Audi"
-}
-motordealer = {
-    "Ninja 650R":"Kawasaki",
-    "GTS300": "Vespa",
-    "Versys 300":"Kawasaki"
-}
+import random
+import random as r
 
-telefoonboek={
-    ("Armando","Roerdinkveldboom"):"0611084938",
-    ("Henk","de Tank"):"0612345678",
-    ("Lars","Tokkie"):"0642069123"
-}
+lst = ["Hond","Kat","Cavia","Capybara"]
+a = r.randrange(0,len(lst))
+b = r.uniform(100,1000)
+print(b)
 
-def lookup(dct):
-    naam = input("Naam: ")
-    achter= input("Achternaam: ")
-    tup = (naam,achter)
-    if tup in dct:
-        print(dct[tup])
-    else:
-        print("Niet een bestaande naam")
+def game(n):
 
-with open("namen.json","w") as file:
-    json.dump(dct,file)
+    lst = [" "]*n+["B"]
+    print(lst)
+    random.shuffle(lst)
+    print(lst)
 
+    while True:
+        i = input("Where do you want to check?: ")
+        if lst[int(i)]=="B":
+            print("You found the bomb")
+            break
+        else:
+            print("Try again")
+
+
+while True:
+    try:
+        a = input("Vul een getal in: ")
+        b = 10/int(a)
+        print(b)
+        break
+    except ValueError:
+        print("Vul een heel getal in als nummer!")
+    except ZeroDivisionError as e:
+
+            print("Het getal mag geen nul zijn")
+            print("Error : "+(e.args))
+
+    except:
+        print("Iets is verkeerd gegaan")
+random.rand
