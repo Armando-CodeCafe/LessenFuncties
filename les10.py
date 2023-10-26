@@ -27,6 +27,6 @@ module1(cur)
 
 conn.commit()
 conn.close()
-def foo(a,b,c=10,d):
+def foo(a,b,c=10):
     print(a,b,c)
 foo(15,20,c=30)
